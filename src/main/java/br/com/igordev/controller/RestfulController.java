@@ -35,7 +35,7 @@ public class RestfulController {
 	
 	@RequestMapping(value = "popula", method = RequestMethod.POST)
 	@ResponseBody
-	public void populaPagamentos(@RequestBody Pagamento Pagamento) {
+	public void populaPagamentos() {
 		dao.popula();
 	}
 
