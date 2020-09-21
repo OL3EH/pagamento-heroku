@@ -33,10 +33,11 @@ public class RestfulController {
 		return "index";
 	}
 	
-	@RequestMapping(value = "popula", method = RequestMethod.POST)
+	@RequestMapping(value = "popula", method = RequestMethod.GET)
 	@ResponseBody
-	public void populaPagamentos() {
+	public String populaPagamentos() {
 		dao.popula();
+		return "dados-populados";
 	}
 
 	@RequestMapping(value = "get-pagamentos", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
