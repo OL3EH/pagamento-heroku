@@ -24,8 +24,7 @@ public class Pagamento {
     public Pagamento() {
     }
 
-    public Pagamento(Integer codigo, String descricao, LocalDate dataVencimento, Double valor, Boolean pago) {
-        this.codigo = codigo;
+    public Pagamento(String descricao, LocalDate dataVencimento, Double valor, Boolean pago) {
         this.descricao = descricao;
         this.dataVencimento = dataVencimento;
         this.valor = valor;
