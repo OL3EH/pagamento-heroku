@@ -37,7 +37,7 @@ public class RestfulController {
 	@ResponseBody
 	public String populaPagamentos() {
 		dao.popula();
-		return "dados-populados";
+		return "<h3>dados populados!</h3>";
 	}
 
 	@RequestMapping(value = "get-pagamentos", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
@@ -52,11 +52,12 @@ public class RestfulController {
 		return dao.buscaPorId(id);
 	}
 
-	@RequestMapping(value = "remove-pagamento/{id}", method = RequestMethod.DELETE)
+	@RequestMapping(value = "remove-pagamento/{id}", method = RequestMethod.GET)
 	@ResponseBody
-	public void remove(@PathVariable("id") int id) {
+	public String remove(@PathVariable("id") int id) {
 		Pagamento p = dao.buscaPorId(id);
 		dao.exclui(p);
+		return "<h3>pagamento exluido!</h3>";
 	}
 
 }
